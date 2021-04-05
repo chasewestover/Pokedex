@@ -3,10 +3,11 @@ const rootImage = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/spri
 
 function Pokedex(props) {
   const { pokeData } = props;
+  console.log(pokeData);
   return <div style={{}}>
     {pokeData.map(p =>
-      <div style={{ margin: "10px", borderRadius: "10px", display: "inline-block", height: "200px", width: "150px", border: "solid black 1px" }}>
-        <Pokecard name={p.name} type={p.type} image={rootImage + p.id + ".png"} />
+      <div style={{ margin: "10px", borderRadius: "10px", display: "inline-block", height: "300px", width: "150px", border: "solid black 1px" }}>
+        <Pokecard name={p.name} type={p.type} image={rootImage + p.id + ".png"} exp={p.base_experience}/>
       </div>)}
   </div>;
 }
